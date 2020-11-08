@@ -4,4 +4,10 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign up</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="school">School</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign up</string>
 </resources>
