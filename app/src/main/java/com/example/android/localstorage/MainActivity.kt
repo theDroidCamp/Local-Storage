@@ -1,6 +1,7 @@
 package com.example.android.localstorage
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.EditText
@@ -28,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         binding.signUpButton.setOnClickListener{ collectData()
             //To display the details entered on the next screen
 
-            //val intent = Intent(this, profilescreen::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 
