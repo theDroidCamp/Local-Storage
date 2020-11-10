@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
@@ -51,6 +52,9 @@ class LoginActivity : AppCompatActivity() {
         if (email.equals(_email, true)) {
             if (password.equals(_password)) {
                 // TODO: Use an Intent and navigate to UserDetailsActivity
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+
             } else {
                 Toast.makeText(this, "Incorrect Password.", Toast.LENGTH_LONG).show()
             }
