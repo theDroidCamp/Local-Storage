@@ -8,4 +8,6 @@
     <string name="name">Name</string>
     <string name="school">School</string>
     <string name="sign_up">Sign up</string>
+    <string name="user_details">User Details</string>
+    <string name="logout">Logout</string>
 </resources>
