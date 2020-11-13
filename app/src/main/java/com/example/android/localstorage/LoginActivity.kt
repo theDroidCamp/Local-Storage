@@ -4,9 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.Editable
-import android.text.TextWatcher
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -15,7 +12,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        removeTextInputErrors()
         buttonLogin.setOnClickListener { validateInputs() }
         buttonSignup.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
@@ -45,13 +41,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser(_email: String, _password: String) {
-        val mPref = getSharedPreferences(Constants.PREFERENCE_NAME, Context.MODE_PRIVATE)
-        val email = mPref.getString(Constants.EMAIL_PREF, "")
-        val password = mPref.getString(Constants.PASSWORD_PREF, "")
+        val mPref = getSharedPreferences("detailsSupplied", Context.MODE_PRIVATE)
+        val email = mPref.getString("email".plus(_email), "")
+        val password = mPref.getString("password".plus(_email), "")
 
         if (email.equals(_email, true)) {
             if (password.equals(_password)) {
-                // TODO: Use an Intent and navigate to UserDetailsActivity
                 val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
 
@@ -61,31 +56,5 @@ class LoginActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Incorrect Email Address.", Toast.LENGTH_LONG).show()
         }
-    }
-
-    private fun removeTextInputErrors() {
-        text_input_email.editText?.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {}
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (p0.toString().trim().isNotEmpty()) {
-                    text_input_email.error = null
-                }
-            }
-        })
-
-        text_input_password.editText?.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {}
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (p0.toString().trim().isNotEmpty()) {
-                    text_input_password.error = null
-                }
-            }
-        })
     }
 }
