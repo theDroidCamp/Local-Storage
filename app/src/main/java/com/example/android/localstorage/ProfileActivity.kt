@@ -34,9 +34,10 @@ setContentView(R.layout.activity_profile)
         val c = school_edit_text.getText().toString()
 
         val detailsSupplied = getSharedPreferences("detailsSupplied", Context.MODE_PRIVATE)
-        nameTxt.setText(detailsSupplied.getString("name","$a"))
-        emailTxt.setText(detailsSupplied.getString("email",b))
-        schoolTxt.setText(detailsSupplied.getString("school",c))
+        nameTxt.setText(detailsSupplied.getString("name"," "))
+        emailTxt.setText(detailsSupplied.getString("email"," "))
+        schoolTxt.setText(detailsSupplied.getString("school"," "))
+
 
     }
 
