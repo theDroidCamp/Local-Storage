@@ -51,10 +51,10 @@ class MainActivity : AppCompatActivity() {
         if (IsEntered()) {
             val detailsSupplied = getSharedPreferences("detailsSupplied", Context.MODE_PRIVATE)
             val entered = detailsSupplied.edit()
-            entered.putString("name", nameEditText.text.toString())
-            entered.putString("email", emailEditText.text.toString())
-            entered.putString("school", schoolEditText.text.toString())
-            entered.putString("password", passwordEditText.text.toString())
+            entered.putString("name".plus(emailEditText.text.toString()), nameEditText.text.toString())
+            entered.putString("email".plus(emailEditText.text.toString()), emailEditText.text.toString())
+            entered.putString("school".plus(emailEditText.text.toString()), schoolEditText.text.toString())
+            entered.putString("password".plus(emailEditText.text.toString()), passwordEditText.text.toString())
 
             entered.apply()
 
