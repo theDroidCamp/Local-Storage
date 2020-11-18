@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.localstorage.databinding.ActivitySignUpBinding
-import com.example.android.localstorage.databinding.ActivitySignUpBinding.inflate
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         nameEditText = binding.nameEditText
         emailEditText = binding.emailEditText

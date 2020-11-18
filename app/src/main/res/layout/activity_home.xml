@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="@color/teal"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_marginTop="188dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="50sp"
+        style="@style/Widget.LocalStorage.TextView"
+        android:gravity="center"/>
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/message"
+        android:layout_marginTop="37dp"
+        android:contentDescription="@string/image"
+        android:scaleType="center"
+        app:srcCompat="@drawable/ic_account" />
+
+    <Button
+        android:id="@+id/create_new"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/icon"
+        android:layout_centerInParent="true"
+        android:text="@string/create_account"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        app:cornerRadius="25dp" />
+
+    <Button
+        android:id="@+id/sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:text="@string/existing"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

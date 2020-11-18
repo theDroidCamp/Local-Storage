@@ -10,4 +10,8 @@
     <string name="sign_up">Sign up</string>
     <string name="user_details">User Details</string>
     <string name="logout">Logout</string>
+    <string name="welcome">Welcome!</string>
+    <string name="existing">Already have an account? Log in</string>
+    <string name="create_account">Create account</string>
+    <string name="image">image</string>
 </resources>
