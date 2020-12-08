@@ -31,6 +31,9 @@ class SignUpActivity : AppCompatActivity() {
             //To display the details entered on the next screen
             if (isEntered()) {
                 val intent = Intent(this, ProfileActivity::class.java)
+                intent.putExtra("name", "user's name")
+                intent.putExtra("email", "user's email")
+                intent.putExtra("school", "user's school")
                 startActivity(intent)
             }
 
